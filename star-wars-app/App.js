@@ -2,9 +2,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Platform } from "react-native";
-import Home from "./Home";
-import News from "./News";
-import Settings from "./Settings";
+import Planets from "./Planets";
+import Films from "./Films";
+import Spaceships from "./Spaceships";
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
@@ -14,17 +14,17 @@ export default function App() {
     <NavigationContainer>
       {Platform.OS === "ios" && (
         <Tab.Navigator>
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="News" component={News} />
-          <Tab.Screen name="Settings" component={Settings} />
+          <Tab.Screen name="Planets" component={Planets} />
+          <Tab.Screen name="Films" component={Films} />
+          <Tab.Screen name="Spaceships" component={Spaceships} />
         </Tab.Navigator>
       )}
 
       {Platform.OS == "android" && (
         <Drawer.Navigator>
-          <Drawer.Screen name="Home" component={Home} />
-          <Drawer.Screen name="News" component={News} />
-          <Drawer.Screen name="Settings" component={Settings} />
+          <Drawer.Screen name="Planets" component={Home} />
+          <Drawer.Screen name="Films" component={News} />
+          <Drawer.Screen name="Spaceships" component={Settings} />
         </Drawer.Navigator>
       )}
     </NavigationContainer>
